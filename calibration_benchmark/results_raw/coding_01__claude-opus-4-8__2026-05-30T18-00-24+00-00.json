@@ -1,0 +1,13 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "num_turns": 1,
+  "result": "**Shipped (merged to main):**\n- Null-user bug fix in onboarding flow (Sam)\n- New dashboard widget (Priya)\n- Dependency bumps (Priya)\n\n**Flag in standup:**\n- **`wip: refactor billing module` (Sam)** \u2014 WIP commit on main. Is this intentionally landed or premature? Billing is high-risk; confirm it's complete/tested or shouldn't be there.\n- **`enable new pricing on staging` (Sam)** \u2014 staging-only. Confirm rollout plan/date for prod and who's verifying.\n- **Onboarding null-user fix** \u2014 worth a quick \"was this a prod incident or proactive?\" so others know if it affected customers.\n\n**Quick asks:**\n- No tests visible in these messages \u2014 were tests added for the billing/onboarding changes?\n- Dependency bump (Priya): any breaking changes or just patches?\n\nOne caveat: commit messages alone don't tell you what's actually deployed vs. just merged \u2014 verify against your release/deploy pipeline before reporting \"shipped.\"",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 391,
+    "output_tokens": 361
+  }
+}

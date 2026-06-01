@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Local, machine-specific Claude Code settings (browser paths, local perms)
+.claude/settings.local.json
+
+# Regenerable blind-scoring intermediates (rebuild via _build_*.py)
+_blind_packet.md
+_pilot_blind_packet.md
+_judge2_packet.md
+_perplexity_chunk*.md
+_unblind_key.json
+_pilot_unblind_key.json

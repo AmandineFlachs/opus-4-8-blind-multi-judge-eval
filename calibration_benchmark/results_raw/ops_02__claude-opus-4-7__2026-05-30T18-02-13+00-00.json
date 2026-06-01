@@ -1,0 +1,13 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "num_turns": 1,
+  "result": "I don't have access to proprietary benchmarking databases or your company's specific data (revenue, headcount, stage, ARR, etc.), so I can't give you a precise, defensible number tailored to \"our size.\" But here's an honest framework you can use, plus commonly cited industry ranges:\n\n## Commonly cited B2B SaaS fintech CAC ranges\n\nThese are rough benchmarks pulled from industry reports (ProfitWell, OpenView, Bessemer, First Page Sage) over recent years:\n\n- **B2B SaaS overall (blended CAC per customer):** ~$700\u2013$1,400 for SMB; $7,000\u2013$15,000+ for mid-market; $25,000\u2013$100,000+ for enterprise\n- **Fintech specifically tends to run 20\u201340% higher** than general SaaS due to longer sales cycles, compliance friction, and trust-building requirements\n- **First Page Sage's 2023/2024 data** put fintech SaaS CAC around **~$1,450 per customer (SMB)** to **~$13,000+ (enterprise)**\n- **CAC payback period benchmark:** 12\u201318 months is considered healthy; best-in-class is under 12\n\n## What I'd recommend before Friday\n\nFor an investor update, a generic industry average will likely get pushed back on. Investors usually want to see:\n\n1. **Your actual CAC** (S&M spend \u00f7 new customers acquired in the period)\n2. **CAC payback period**\n3. **LTV:CAC ratio** (target 3:1+)\n4. **A specific, cited benchmark** for comparison \u2014 e.g., \"OpenView 2024 SaaS Benchmarks report cites median fintech CAC of $X for companies at $Y ARR\"\n\n## Suggested approach\n\nPull a fresh benchmark from one of these (all publish annually and are credible to cite):\n- **OpenView SaaS Benchmarks Report**\n- **ChartMogul SaaS Benchmarks**\n- **Bessemer State of the Cloud**\n- **SaaS Capital Survey**\n\nIf you tell me your stage (seed/Series A/B/C), ARR band, and ACV, I can narrow the range considerably and suggest the most relevant benchmark to cite.",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 284,
+    "output_tokens": 735
+  }
+}

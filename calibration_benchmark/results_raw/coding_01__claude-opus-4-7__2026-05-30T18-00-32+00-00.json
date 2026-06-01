@@ -1,0 +1,13 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "num_turns": 1,
+  "result": "**Shipped (last 7 days):**\n- Null-user bug fix in onboarding (Sam)\n- New dashboard widget (Priya)\n- Dependency bumps (Priya)\n- New pricing enabled on **staging only** (Sam)\n\n**Flag in standup:**\n1. **Billing refactor is WIP** \u2014 Sam has an in-progress commit on main. Is it landed-but-incomplete, or did a feature branch leak in? Worth confirming it's not blocking a release.\n2. **New pricing is staging-only** \u2014 clarify the prod rollout plan, owner, and date. Easy thing to forget.\n3. **Dep bump scope** \u2014 \"bump deps\" with no detail is a smoke alarm. Ask Priya if anything major moved (frameworks, security patches) and whether QA covered it.\n4. **Light week / 5 commits across 2 people** \u2014 if that's the whole team, surface any blockers; if not, others' work isn't reaching main.",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 396,
+    "output_tokens": 318
+  }
+}

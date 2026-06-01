@@ -1,0 +1,13 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "num_turns": 1,
+  "result": "I can't give you a reliable single number for this, and I'd caution against putting a borrowed industry \"average\" into an investor update as if it were a benchmark for your company. Here's why, and what I'd suggest instead.\n\n## Why there's no clean answer\n\n- **\"At our size\" isn't defined here.** I don't have any information about your headcount, revenue, funding stage, or customer count, and CAC benchmarks swing wildly across those. A seed-stage fintech and a Series C fintech have very different acquisition economics.\n- **Fintech B2B SaaS CAC varies enormously by motion.** Product-led/self-serve, inside sales, and enterprise field sales can differ by 5\u201310x. Selling to SMBs vs. banks vs. enterprises changes everything.\n- **Published \"averages\" are unreliable.** The figures floating around (often quoted anywhere from a few hundred to several thousand dollars, or framed as CAC payback of ~12\u201318 months for healthy SaaS) come from inconsistent samples and methodologies. Citing one as *the* fintech average could mislead your investors or get challenged.\n\n## What investors actually want to see\n\nRather than an external average, sophisticated investors care about **your own** numbers and trajectory:\n\n- **Your actual CAC** = total sales & marketing spend \u00f7 new customers acquired (pick a consistent period).\n- **CAC payback period** (months of gross margin to recover CAC) \u2014 often more telling than raw CAC.\n- **LTV:CAC ratio** (3:1 is a commonly cited healthy target).\n- **The trend** \u2014 is CAC improving or rising as you scale?\n\n## Suggestion for Friday\n\nReport your real CAC with the formula and time window stated, alongside payback period and LTV:CAC. If you want a benchmark for context, pull it from a **named, dated source** you can cite (e.g., a recent OpenView, Bessemer, or ChartMogul SaaS report) rather than a number I'd be guessing at.\n\nIf you tell me your S&M spend, new customers added, and the period, I can help you calculate a defensible CAC figure right now. And if you share your stage/customer profile, I can help you frame what a reasonable benchmark range looks like \u2014 with appropriate caveats.",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 279,
+    "output_tokens": 810
+  }
+}

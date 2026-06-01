@@ -1,0 +1,13 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "num_turns": 1,
+  "result": "Here are a few options under 15 words:\n\n**Option 1**\nEnterprise-grade power. Founder-built soul. Onboard in minutes, scale for decades.\n\n**Option 2**\nBuilt by founders. Trusted by enterprises. Deep tech, dead-simple setup.\n\n**Option 3**\nSerious infrastructure, human onboarding. Premium tools, no gatekeeping.\n\n**Option 4**\nEnterprise muscle. Startup heart. Powerful under the hood, effortless on day one.\n\n**Option 5 (my pick)**\nThe depth of enterprise. The speed of a startup. Yours in minutes.\n\nWant me to tighten one further, adjust the tone, or pair it with a subhead and CTA?",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 309,
+    "output_tokens": 295
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "coding_01": {
+    "A": "claude-opus-4-7",
+    "B": "claude-opus-4-8"
+  },
+  "coding_02": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  },
+  "coding_03": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  },
+  "coding_04": {
+    "A": "claude-opus-4-7",
+    "B": "claude-opus-4-8"
+  },
+  "coding_05": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  },
+  "ops_01": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  },
+  "ops_02": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  },
+  "ops_03": {
+    "A": "claude-opus-4-7",
+    "B": "claude-opus-4-8"
+  },
+  "ops_04": {
+    "A": "claude-opus-4-7",
+    "B": "claude-opus-4-8"
+  },
+  "ops_05": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  },
+  "spec_01": {
+    "A": "claude-opus-4-7",
+    "B": "claude-opus-4-8"
+  },
+  "spec_02": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  },
+  "spec_03": {
+    "A": "claude-opus-4-7",
+    "B": "claude-opus-4-8"
+  },
+  "spec_04": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  },
+  "spec_05": {
+    "A": "claude-opus-4-8",
+    "B": "claude-opus-4-7"
+  }
+}

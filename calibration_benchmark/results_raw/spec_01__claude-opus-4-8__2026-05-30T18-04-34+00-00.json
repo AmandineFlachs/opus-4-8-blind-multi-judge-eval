@@ -1,0 +1,13 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "num_turns": 1,
+  "result": "Here are a few options under 15 words:\n\n1. **\"Enterprise power, founder hustle. Deep tech that onboards in minutes, not months.\"**\n\n2. **\"Built by founders, trusted by enterprise. Powerful under the hood, simple to start.\"**\n\n3. **\"Serious infrastructure. Friendly onboarding. The premium platform that doesn't make you wait.\"**\n\n4. **\"Enterprise-grade depth, startup speed. Powerful enough to scale, simple enough to start today.\"**\n\n5. **\"Big-league capability, founder-led care. Technically deep, refreshingly easy to begin.\"**\n\nA quick honest note: you're asking one line to carry four tension-filled promises (enterprise + scrappy, premium + accessible, deep + easy). Stuffing all four in risks sounding like everything to everyone. My suggestion: pick the **two** that most differentiate you from competitors, lead with those in the hero, and let the other two surface in subheads or supporting copy.\n\nIf you can tell me what you actually sell and who the buyer is, I can sharpen these considerably. Want me to draft matching subhead options too?",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 304,
+    "output_tokens": 391
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "api_error_status": null,
+  "num_turns": 1,
+  "result": "Don't ship this \u2014 it has several show-stoppers. You're executing AI-generated SQL directly against your customer database with zero guardrails, which is effectively a prompt-injection-to-SQL-injection pipeline (a user can ask \"delete all customers\" or exfiltrate any table); at minimum you need a read-only DB connection (or a read replica), an allow-list of tables/columns, a statement-type check (SELECT only), row/time limits, and query logging. On top of that, there's no authentication or authorization (host `0.0.0.0` exposes it to the network with anonymous access), no rate limiting, no input validation, no error handling (a bad SQL string will 500 and leak schema details), and you're using Flask's dev server (`app.run`) in what sounds like production \u2014 use gunicorn/uvicorn behind a real auth layer. Fix those before tomorrow, or ship it internally to a tiny pilot group against a sanitized copy of the data first.",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 442,
+    "output_tokens": 314
+  }
+}
