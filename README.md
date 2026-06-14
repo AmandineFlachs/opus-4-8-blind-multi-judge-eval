@@ -112,15 +112,15 @@ How much do the four judges actually agree? The three model judges cluster tight
 
 ![Pairwise inter-rater agreement heatmap (weighted kappa)](assets/kappa_heatmap.png)
 
-The low human↔model κ is mostly a **statistical artefact, not real disagreement.** The human scored correctness as 2 for almost every response — near-zero variance — which collapses Cohen's κ (the "base-rate paradox") even though **raw within-one-point agreement stays 93–100%** across every pair and axis. Across 90 score cells × 4 judges, only **one** cell had a full 2-point spread. Reporting κ *and* within-1 keeps this honest.
+The low human↔model κ is mostly a **statistical artefact, not real disagreement.** The human scored correctness as 2 for almost every response — near-zero variance — which collapses Cohen's κ (the "base-rate paradox") even though **raw within-one-point agreement stays 93–100%** across every pair and axis. Across 90 score cells × 4 judges, only **nine** cells had a full 2-point spread (and eight of those are the human being more generous to 4.7). Reporting κ *and* within-1 keeps this honest.
 
 ### The most interesting finding: humans and models disagree about what "correct" means
 
-The human grader sees the smallest 4.8-vs-4.7 gap (+21 vs the models' +31 to +37). The reason is specific and, I think, the most thought-provoking result here:
+The human grader sees the smallest 4.8-vs-4.7 gap (+23 vs the models' +31 to +37). The reason is specific and, I think, the most thought-provoking result here:
 
 ![Opus 4.7 correctness score by judge: the human scores it far higher than the models](assets/correctness_by_judge.png)
 
-To a **human**, 4.7's confident-but-context-inventing answers still read as *correct and useful* — so 4.7 gets docked on calibration, not correctness. The **model** judges treat that same confabulation as a correctness failure too. Same responses, blind, different notion of "wrong."
+To a **human**, 4.7's confident-but-context-inventing answers mostly read as *correct and useful*. She still docked correctness where the substance was actually wrong (4.7 scored 27/30, not a free pass), but booked most of the confident invention as a *calibration* miss rather than a correctness error. The **model** judges treat that same invention as a correctness failure. Same responses, blind — a different notion of "wrong."
 
 ## Discussion: the takeaway
 

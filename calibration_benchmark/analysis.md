@@ -96,14 +96,14 @@ To test whether the result is an artifact of the (Claude) scorer, all 15 prompts
 | Claude — Anthropic | 87/90 | 52/90 | +35 |
 | Kimi K2.6 — Moonshot | 80/90 | 43/90 | +37 |
 | GPT-5.4 — OpenAI | 76/90 | 45/90 | +31 |
-| Human (author) | 82/90 | 59/90 | +21 |
+| Human (author) | 82/90 | 59/90 | +23 |
 | **Consensus (median of 4)** | **82.5/90** | **46.5/90** | **+36** |
 
 **The direction is unanimous: all four judges, across three model lineages and a human, rank Opus 4.8 > 4.7.** That is the robust, scorer-independent result and retires the "the judge is also a Claude model" concern — a non-Claude model (Kimi), a second non-Claude model (GPT-5), and a human all reproduce it.
 
 ### Two findings the multi-rater pass surfaced
 
-**1. The magnitude is rater-dependent, and the human sees the smallest gap (+21 vs the models' +31–37).** The reason is specific: the human is far more lenient on **4.7's correctness** (she scores it 27/30; the models score it 17–22) and somewhat more lenient on its assumption discipline — but she scores its **uncertainty handling** in line with the models (13/30). In other words, to a human, 4.7's confident-but-context-inventing answers still read as "correct and useful," and 4.7 gets docked on *calibration*, not correctness. The model judges dock it on both. This means the **calibration gap (uncertainty + assumption discipline) is the rater-independent finding**; the correctness gap is real to model-judges but a human is more forgiving there. Notably, this vindicates the original 3-prompt pilot's read (human-scored): correctness roughly comparable, the real delta in calibration.
+**1. The magnitude is rater-dependent, and the human sees the smallest gap (+23 vs the models' +31–37).** The reason is specific: the human is far more lenient on **4.7's correctness** (she scores it 27/30; the models score it 17–22) and somewhat more lenient on its assumption discipline — but she scores its **uncertainty handling** in line with the models (13/30). In other words, to a human, 4.7's confident-but-context-inventing answers mostly read as "correct and useful" — she still docked correctness where the substance was actually wrong (3 prompts; 27/30, not a free pass), but booked the rest of the confident invention as a *calibration* miss, not a correctness error. The model judges treat that same invention as a correctness failure too. This means the **calibration gap (uncertainty + assumption discipline) is the rater-independent finding**; the correctness gap is real to model-judges but a human is more forgiving there. Notably, this vindicates the original 3-prompt pilot's read (human-scored): correctness roughly comparable, the real delta in calibration.
 
 **2. The three model judges cluster; the human is the principled outlier.** Model↔model weighted κ is 0.59–0.72 (GPT-5↔Kimi highest at 0.72); human↔model mean κ is lower (0.31–0.42), driven almost entirely by correctness (e.g. Kimi↔human correctness κ = 0.09).
 
@@ -117,7 +117,7 @@ Across 90 cells × 4 judges, only **9 axis-cells** have a ≥2-point spread, and
 
 - **N = 15 prompts × 2 models = 30 responses, now scored by 4 judges (120 scored responses).** Directional, not statistical, but the direction is unanimous across all four raters and all three categories.
 - **Single-shot per prompt.** No retries; output variance not measured. Re-running could shift individual scores by a point.
-- **Magnitude is rater-dependent (the main remaining caveat).** All four judges agree 4.8 > 4.7, but the gap ranges +21 (human) to +37 (Kimi). Cite the consensus (+36) and the *direction*, not a single judge's point total. The correctness gap in particular is model-judge-specific; the human sees it as near-tied.
+- **Magnitude is rater-dependent (the main remaining caveat).** All four judges agree 4.8 > 4.7, but the gap ranges +23 (human) to +37 (Kimi). Cite the consensus (+36) and the *direction*, not a single judge's point total. The correctness gap in particular is model-judge-specific; the human sees it as near-tied.
 - **All three model judges may still share LLM blind spots**, and the human judge also authored the prompts. Blinding (A/B) neutralizes authorship at scoring time, but a second independent *human* scorer would be the next hardening step. The human↔human bar is currently un-tested.
 - **Residual context the strip flags don't catch.** The user-level `~/.claude/CLAUDE.md` is still loaded by default; it was empty here. The model also knows it's Claude, which the eval doesn't hide.
 - **Self-correction** was not scored (single-turn).

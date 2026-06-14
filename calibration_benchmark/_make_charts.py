@@ -167,8 +167,8 @@ print("wrote kappa_heatmap.png")
 c47=[jtotal_axis if False else sum(judges[j].get((pid,MODELS[1]),{}).get("correctness",0) for p in PROMPTS for pid in [p["id"]]) for j in judges]
 fig,ax=plt.subplots(figsize=(9.2,5.4))
 bars=ax.bar(list(judges.keys()), c47, color=["#94a3b8","#94a3b8","#94a3b8","#2563eb"])
-style(ax,"Models penalize confident confabulation; the human doesn't",
-      "Opus 4.7 correctness / 30, by judge. Humans read polished-but-invented answers as 'correct'.",
+style(ax,"Same answers, a split on what 'correct' means",
+      "Opus 4.7 correctness / 30, by judge. Models scored confident invention as wrong; the human scored it as right-but-miscalibrated.",
       33,"4.7 correctness / 30")
 labels(ax,bars)
 footer(fig); fig.tight_layout(rect=[0,0.04,1,1])
