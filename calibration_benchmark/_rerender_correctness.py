@@ -1,6 +1,8 @@
 """Re-render ONLY correctness_by_judge.png with the updated title, without
 touching the other (avatar-composited) chart PNGs. Reuses the loader + style
-from _make_charts.py. Run after editing the title string there.
+from _make_charts.py. Composites the author's avatar badge
+(../assets/_avatar_badge.png) centered directly under the 'Human' column —
+the human judge — so it reads as a label, not a corner watermark.
 """
 
 import csv, json
@@ -8,6 +10,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from PIL import Image
 
 HERE = Path(__file__).parent
 ASSETS = HERE.parent / "assets"
@@ -48,7 +51,8 @@ c47 = [sum(judges[j].get((pid, MODELS[1]), {}).get("correctness", 0)
            for p in PROMPTS for pid in [p["id"]]) for j in judges]
 print("4.7 correctness by judge:", dict(zip(judges, c47)))
 
-fig, ax = plt.subplots(figsize=(10.2, 5.4))
+DPI = 200
+fig, ax = plt.subplots(figsize=(10.2, 5.7))
 bars = ax.bar(list(judges.keys()), c47, color=["#94a3b8", "#94a3b8", "#94a3b8", "#2563eb"])
 ax.set_title("Same answers, a split on what 'correct' means", fontsize=17, fontweight="bold", pad=18, loc="left")
 ax.text(0, 1.02, "Opus 4.7 correctness / 30, by judge. Models scored confident invention as wrong; the human as miscalibrated.",
@@ -59,8 +63,31 @@ for b in bars:
     h = b.get_height()
     ax.text(b.get_x() + b.get_width()/2, h + 33*0.012, f"{h:.0f}",
             ha="center", va="bottom", fontsize=11, fontweight="bold", color="#334155")
-fig.text(0.5, 0.015, FOOT, ha="center", fontsize=9, color="#94a3b8")
-fig.tight_layout(rect=[0, 0.04, 1, 1])
-fig.savefig(ASSETS / "correctness_by_judge.png", dpi=200, facecolor="white")
+fig.text(0.5, 0.018, FOOT, ha="center", fontsize=9, color="#94a3b8")
+# leave a row of whitespace under the x labels for the avatar badge
+fig.tight_layout(rect=[0, 0.11, 1, 1])
+
+# locate the 'Human' tick label so the badge sits centered under that column.
+# window_extent is in the figure's render DPI; the PNG is saved at DPI, so scale.
+fig.canvas.draw()
+scale = DPI / fig.dpi
+img_H = fig.bbox.height * scale
+lbl = ax.get_xticklabels()[-1]
+bb = lbl.get_window_extent()
+cx = (bb.x0 + bb.x1) / 2.0 * scale            # PIL x of the column center
+label_bottom_top = img_H - bb.y0 * scale      # PIL y of the label's lowest point
+
+out = ASSETS / "correctness_by_judge.png"
+fig.savefig(out, dpi=DPI, facecolor="white")
 plt.close(fig)
-print("wrote correctness_by_judge.png")
+
+# composite the avatar badge centered under the Human column
+chart = Image.open(out).convert("RGBA")
+badge = Image.open(ASSETS / "_avatar_badge.png").convert("RGBA")
+bw, bh = badge.size
+gap = 10
+x = int(round(cx - bw / 2))
+y = int(round(label_bottom_top + gap))
+chart.alpha_composite(badge, (x, y))
+chart.convert("RGB").save(out)
+print(f"wrote correctness_by_judge.png (badge at {x},{y}, col center {cx:.0f})")
